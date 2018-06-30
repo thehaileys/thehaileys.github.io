@@ -1,8 +1,8 @@
 var fs = require('fs');
 var gm = require('gm');
 
-// var forceOverwrite = false;
-var forceOverwrite = true;
+var forceOverwrite = false;
+// var forceOverwrite = true;
 var imagesDirSubPath = "..\\images\\posts";
 var sourceBasePath = __dirname + "\\" + imagesDirSubPath;
 var newSizes = [
