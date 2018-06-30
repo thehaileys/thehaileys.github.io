@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "id": "1-flight-2-kids",
+      "date": "2018-06-19T00:00:00.000Z",
+      "coverImage": "IMG_20180619_050302.jpg",
+      "tags": [
+        "Greece",
+        "Crete"
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Greece",
+      "bucket": 5
+    },
+    {
+      "name": "Crete",
+      "bucket": 10
+    }
+  ]
+}

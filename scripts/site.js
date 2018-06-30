@@ -145,6 +145,10 @@ Blog.Data.convertImageUrlToThumbUrl = function(filename) {
 	var extensionIndex = filename.lastIndexOf(".");
 	return filename.substring(0,extensionIndex+1) + "thumb" + filename.substring(extensionIndex, filename.length);
 };
+Blog.Data.convertImageUrlToSmallUrl = function(filename) {
+	var extensionIndex = filename.lastIndexOf(".");
+	return filename.substring(0,extensionIndex+1) + "small" + filename.substring(extensionIndex, filename.length);
+};
 Blog.Data.LongMonthNames = ["January","February","March","April","May","June","July","August", "September", "October","November","December"];
 Blog.Data.parseIsoDate = function(dateString) {
 	return new Date(Date.parse(dateString));
@@ -254,12 +258,12 @@ Blog.Content.createPost = function(postData){
 			var imageRow = $("<div>").addClass("post-images-row").appendTo(images);
 			for(var ri = 0; ri < imagesInRow && nextImage < totalImages; ri++) {						
 				var imgSrc = Blog.Navigation.buildImageSrc(postDate, postData.images.fileNames[nextImage]);
-				var thumbnail = Blog.Data.convertImageUrlToThumbUrl(imgSrc);
+				var smallImg = Blog.Data.convertImageUrlToSmallUrl(imgSrc);
 				var carouselLink = $("<a>")
 					.attr('href', imgSrc)
 					.attr('data-lightbox', imageGroupId)
 					.appendTo(imageRow);
-				$("<img>").attr('src', thumbnail).addClass(imgClass).appendTo(carouselLink);
+				$("<img>").attr('src', smallImg).addClass(imgClass).appendTo(carouselLink);
 				nextImage++;
 			}
 		}
