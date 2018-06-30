@@ -1,0 +1,25 @@
+{
+    "id": "rethymno-old-town",
+    "date": "2018-06-21T02:00:00.000Z",
+    "tags": [
+      "Greece",
+      "Crete",
+      "Rethymno"
+    ],
+    "content": [
+      "The old town was very pretty. It was buggy-friendly enough but we were glad we didn't have to drive on the narrow streets.",
+      "We easily found good food options and there were a lot of shops too."
+    ],
+    "images": {
+      "fileNames": [
+        "IMG_20180621_155802.jpg",
+        "IMG_20180621_160135e.jpg",
+        "IMG_20180621_145227.jpg",
+        "IMG_20180621_142425.jpg"
+      ],
+      "rowSizes": [
+        1,
+        3
+      ]
+    }
+  }

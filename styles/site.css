@@ -165,12 +165,14 @@ img.post-image-100 {
 img.post-image-50 {
 	display: inline-block;
 	width: 49%;
+	height: 185px;
 	margin-left: 2px;
 }
 
 img.post-image-33 {
 	display: inline-block;
 	width: 32%;
+	height: 120px;
 	margin-left: 3px;
 }
 
@@ -280,7 +282,7 @@ li.tag a:hover {
 
 .archive-post-image {	
 	width: 150px;
-	overflow: hidden;
+	height: 113px;
 	-webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -border-radius: 5px;
