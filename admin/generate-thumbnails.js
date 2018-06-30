@@ -1,8 +1,8 @@
 var fs = require('fs');
 var gm = require('gm');
 
-var forceOverwrite = false;
-// var forceOverwrite = true;
+// var forceOverwrite = false;
+var forceOverwrite = true;
 var imagesDirSubPath = "..\\images\\posts";
 var sourceBasePath = __dirname + "\\" + imagesDirSubPath;
 var newSizes = [
@@ -56,8 +56,9 @@ var resizeIfNotAlreadyExists = function(source, dest, size) {
 	fs.exists(dest, function(exists) {
 		if(!exists || forceOverwrite) {
 			console.log("Resizing (" + size + "px): " + source);
-			console.log(" -> " + dest);
-			gm(source).resize(size, size, "!").write(dest, function (err) { if (err) { console.log(err); } });
+      console.log(" -> " + dest);
+      var height = Math.round(size / 4) * 3;  // force aspect ratio 4x3
+			gm(source).resize(size, height, "!").write(dest, function (err) { if (err) { console.log(err); } });
 		} else {
       console.log("Skipping (thumbnail already exists): " + source);      
     }
