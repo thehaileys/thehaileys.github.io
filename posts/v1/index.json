@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "id": "leos-first-stag-do",
+      "date": "2018-06-20T00:00:00.000Z",
+      "coverImage": "IMG_20180620_192715.jpg",
+      "tags": [
+        "Greece",
+        "Crete",
+        "Rethymno"
+      ]
+    },
+    {
       "id": "1-flight-2-kids",
       "date": "2018-06-19T00:00:00.000Z",
       "coverImage": "IMG_20180619_050302.jpg",
@@ -13,11 +23,15 @@
   "tags": [
     {
       "name": "Greece",
-      "bucket": 5
+      "bucket": 7
     },
     {
       "name": "Crete",
       "bucket": 10
+    },
+    {
+      "name": "Rethymno",
+      "bucket": 4
     }
   ]
 }
