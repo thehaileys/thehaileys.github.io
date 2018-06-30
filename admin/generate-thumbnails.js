@@ -2,7 +2,7 @@ var fs = require('fs');
 var gm = require('gm');
 
 var forceOverwrite = false;
-//var forceOverwrite = true;
+// var forceOverwrite = true;
 var imagesDirSubPath = "..\\images\\posts";
 var sourceBasePath = __dirname + "\\" + imagesDirSubPath;
 var newSizes = [
@@ -11,6 +11,11 @@ var newSizes = [
 ]
 
 var isSupportedImage = function(filename) {
+  for(var s=0; s<newSizes.length; s++) {
+    if(filename.indexOf("." + newSizes[s].name) != -1) {
+      return false; // making thumbnails of thumbnails is not supported
+    }
+  }
 	var extension = filename.substring(filename.length - 4, filename.length).toLowerCase();
 	return extension == ".jpg" || extension == ".jpeg" || extension == ".png"; 
 }
@@ -49,10 +54,10 @@ var buildTargetFilename = function(filename, sizeName) {
 
 var resizeIfNotAlreadyExists = function(source, dest, size) {
 	fs.exists(dest, function(exists) {
-		if(!exists) {
+		if(!exists || forceOverwrite) {
 			console.log("Resizing (" + size + "px): " + source);
 			console.log(" -> " + dest);
-			gm(source).resize(size, size).write(dest, function (err) { if (err) { console.log(err); } });
+			gm(source).resize(size, size, "!").write(dest, function (err) { if (err) { console.log(err); } });
 		} else {
       console.log("Skipping (thumbnail already exists): " + source);      
     }
