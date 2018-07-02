@@ -247,8 +247,8 @@ Blog.Content.createPost = function(postData){
 	}
 
 	var images = $("<div>").addClass("post-images");	
-	var imageGroupId = "photo-set-" + postData.id;		
 	if(postData.images){
+		var imageGroupId = "photo-set-" + postData.id;		
 		var totalImages = postData.images.fileNames.length;
 		var rows = postData.images.rowSizes.length;
 		var nextImage = 0;
@@ -267,6 +267,18 @@ Blog.Content.createPost = function(postData){
 				nextImage++;
 			}
 		}
+	}
+
+	var video = $("<div>").addClass("post-video");	
+	if(postData.video){
+		var videoFrame = $("<iframe>")
+			.attr('width', 490)
+			.attr('height', 350)
+			.attr('frameborder', 0)
+			.attr('allow', 'autoplay; encrypted-media')
+			.attr('allowfullscreen', '')
+			.attr('src', 'https://www.youtube-nocookie.com/embed/' + postData.video)
+			.appendTo(video);
 	}
 
 	var content = $("<div>").addClass("post-body");
@@ -293,6 +305,7 @@ Blog.Content.createPost = function(postData){
 	newPost.append(title);
 	newPost.append(intro);
 	newPost.append(images);
+	newPost.append(video);
 	newPost.append(content);
 	newPost.append(tags);
 	return newPost;

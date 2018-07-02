@@ -1,0 +1,29 @@
+{
+  "id": "maria-andreas-wedding-reception",
+  "date": "2018-06-22T03:00:00.000Z",
+  "tags": [
+    "Greece",
+    "Crete",
+    "Rethymno"
+  ],
+  "content": [
+    "The evening reception was just beside the church where the ceremony had been performed. As the sun set the venue and nearby cliffs were lit up to create an stunning setting.",
+    "A series of delicious dishes were delivered to our table almost faster than we could sample them. Meanwhile the night started with some very impressive Cretan dancing. Later in the night the music switched to disco and a conga snaked around the tables at one point.",
+    "Some play equipment at the back provided a welcome distraction for kids attending the wedding."
+  ],
+  "images": {
+    "fileNames": [
+      "IMG_20180623_014615.jpg",
+      "IMG_20180623_005917.jpg",
+      "IMG_20180622_205505.jpg",
+      "IMG_20180622_205949.jpg",
+      "IMG_20180622_214804.jpg",
+      "IMG_20180623_011942.jpg"
+    ],
+    "rowSizes": [
+      2,
+      1,
+      3
+    ]
+  }
+}
