@@ -178,6 +178,8 @@ function processPostFiles(err, imagesPaths) {
 		post.date = postData.date;
 		if(postImages && postImages.fileNames && postImages.fileNames.length > 0) {
 			post.coverImage = postImages.fileNames[0];
+		} else if (postData.video) {
+			post.coverImage = postData.video + ".jpg";
 		} else {
 			if(postData.title) {
 				post.coverImageAlt = postData.title;
