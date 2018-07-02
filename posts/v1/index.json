@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "id": "souda-beach",
+      "date": "2018-06-23T00:00:00.000Z",
+      "coverImage": "IMG_20180623_164710.jpg",
+      "tags": [
+        "Greece",
+        "Crete"
+      ]
+    },
+    {
       "id": "maria-andreas-wedding-dancing",
       "date": "2018-06-22T04:00:00.000Z",
       "coverImageAlt": "Big Greek Wedding Reception",
@@ -68,6 +77,15 @@
         "Greece",
         "Crete",
         "Rethymno"
+      ]
+    },
+    {
+      "id": "hire-car-upgrade",
+      "date": "2018-06-21T01:00:00.000Z",
+      "coverImage": "IMG_20180623_150901.jpg",
+      "tags": [
+        "Greece",
+        "Crete"
       ]
     },
     {
