@@ -1,6 +1,45 @@
 {
   "posts": [
     {
+      "id": "flight-home-from-crete",
+      "date": "2018-06-26T00:00:00.000Z",
+      "coverImage": "IMG_20180626_182415.jpg",
+      "tags": [
+        "Greece",
+        "Crete"
+      ]
+    },
+    {
+      "id": "rethymno-beach",
+      "date": "2018-06-25T00:00:00.000Z",
+      "coverImage": "IMG_20180624_203112.jpg",
+      "tags": [
+        "Greece",
+        "Crete",
+        "Rethymno"
+      ]
+    },
+    {
+      "id": "melidoni",
+      "date": "2018-06-24T01:00:00.000Z",
+      "coverImage": "IMG_20180624_142516.jpg",
+      "tags": [
+        "Greece",
+        "Crete",
+        "Melidoni"
+      ]
+    },
+    {
+      "id": "reptisland",
+      "date": "2018-06-24T00:00:00.000Z",
+      "coverImage": "IMG_20180624_132104.jpg",
+      "tags": [
+        "Greece",
+        "Crete",
+        "Melidoni"
+      ]
+    },
+    {
       "id": "souda-beach",
       "date": "2018-06-23T00:00:00.000Z",
       "coverImage": "IMG_20180623_164710.jpg",
@@ -60,6 +99,15 @@
       ]
     },
     {
+      "id": "hire-car-upgrade",
+      "date": "2018-06-21T01:00:00.000Z",
+      "coverImage": "IMG_20180623_150901.jpg",
+      "tags": [
+        "Greece",
+        "Crete"
+      ]
+    },
+    {
       "id": "fortezza-of-rethymno",
       "date": "2018-06-21T01:00:00.000Z",
       "coverImage": "IMG_20180621_133408.jpg",
@@ -67,15 +115,6 @@
         "Greece",
         "Crete",
         "Rethymno"
-      ]
-    },
-    {
-      "id": "hire-car-upgrade",
-      "date": "2018-06-21T01:00:00.000Z",
-      "coverImage": "IMG_20180623_150901.jpg",
-      "tags": [
-        "Greece",
-        "Crete"
       ]
     },
     {
@@ -121,7 +160,7 @@
   "tags": [
     {
       "name": "Greece",
-      "bucket": 7
+      "bucket": 8
     },
     {
       "name": "Crete",
@@ -129,7 +168,11 @@
     },
     {
       "name": "Rethymno",
-      "bucket": 4
+      "bucket": 5
+    },
+    {
+      "name": "Melidoni",
+      "bucket": 3
     }
   ]
 }

@@ -71,3 +71,9 @@ Ensure pre-reqs installed:
 
 Depends on Modules:
 * gm - GraphicsMagic to perform the resizing and write out the resultant image
+
+### YouTube Thumbnails
+
+For posts with no images the thumbnail is used for the Archive page.
+You can download the thumbnail for a YouTube video from: https://img.youtube.com/vi/VIDEO_ID_HERE/hqdefault.jpg
+Save as VIDEO_ID_HERE.jpg and generate the thumbnails based on that.
