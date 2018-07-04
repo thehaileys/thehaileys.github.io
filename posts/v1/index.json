@@ -6,7 +6,9 @@
       "coverImage": "IMG_20180626_182415.jpg",
       "tags": [
         "Greece",
-        "Crete"
+        "Crete",
+        "Scotland",
+        "Glasgow"
       ]
     },
     {
@@ -160,19 +162,27 @@
   "tags": [
     {
       "name": "Greece",
-      "bucket": 8
+      "bucket": 9
     },
     {
       "name": "Crete",
       "bucket": 10
     },
     {
+      "name": "Scotland",
+      "bucket": 2
+    },
+    {
+      "name": "Glasgow",
+      "bucket": 4
+    },
+    {
       "name": "Rethymno",
-      "bucket": 5
+      "bucket": 7
     },
     {
       "name": "Melidoni",
-      "bucket": 3
+      "bucket": 5
     }
   ]
 }

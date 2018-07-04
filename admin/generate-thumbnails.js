@@ -1,8 +1,7 @@
 var fs = require('fs');
 var gm = require('gm');
 
-var forceOverwrite = false;
-// var forceOverwrite = true;
+var forceOverwrite = false;  // If changing logic and want to regenerate all then set to true
 var imagesDirSubPath = "..\\images\\posts";
 var sourceBasePath = __dirname + "\\" + imagesDirSubPath;
 var newSizes = [
@@ -52,17 +51,38 @@ var buildTargetFilename = function(filename, sizeName) {
 	return filename.substring(0,extensionIndex+1) + sizeName + filename.substring(extensionIndex, filename.length);
 }
 
-var resizeIfNotAlreadyExists = function(source, dest, size) {
+var resizeIfNotAlreadyExists = function(source, dest, newWidth) {
 	fs.exists(dest, function(exists) {
 		if(!exists || forceOverwrite) {
-			console.log("Resizing (" + size + "px): " + source);
-      console.log(" -> " + dest);
-      var height = Math.round(size / 4) * 3;  // force aspect ratio 4x3
-			gm(source).resize(size, height, "!").write(dest, function (err) { if (err) { console.log(err); } });
+			checkOrientationAndResizeImage(source, dest, newWidth);
 		} else {
       console.log("Skipping (thumbnail already exists): " + source);      
     }
 	});
+}
+
+var checkOrientationAndResizeImage = function(source, dest, newWidth) {
+  gm(source)
+    .size(function (err, size) {
+      if (err) { console.log(err); }
+      resizeImage(source, dest, newWidth, size);      
+    });
+}
+
+var resizeImage = function(source, dest, newWidth, size) {
+  var newHeight = Math.round(newWidth / 4) * 3;  // force aspect ratio 4x3
+  if(size.width < size.height) {
+    var cropHeight = size.width * 0.75;
+    var cropY = (size.height - cropHeight) / 2
+    gm(source)
+      .crop(size.width, cropHeight, 0, cropY)   // Crop portrain images to reduce squashing
+      .resize(newWidth, newHeight, "!")
+      .write(dest, function (err) { if (err) { console.log(err); } });
+  } else {
+    gm(source)
+      .resize(newWidth, newHeight, "!")
+      .write(dest, function (err) { if (err) { console.log(err); } });
+  }
 }
 
 findImageFiles(sourceBasePath, function(err, imagesPaths) {
