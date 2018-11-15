@@ -1,5 +1,8 @@
 {
+    "name": "thehaileys.com",
+    "version": "0.1.0",
     "dependencies": {
-        "gm": "1.23.x"
+        "gm": "1.23.x",
+        "node-minify": "3.6.x"
     }
 }

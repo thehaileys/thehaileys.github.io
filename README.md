@@ -14,6 +14,10 @@ Use node http server to browse the site locally (and avoid cross-origin issues l
 
 ### Directories
 
+#### core site
+
+build.bat
+
 admin/
   admin-script-1.js
 
@@ -25,18 +29,30 @@ images/
   website-styling-imageX.png
 
 posts/
-   vX/
-     index.json
-     YYYY/
-       MM/
-         post-id-1.json
-	     post-id-n.json
+  vX/
+    index.json
+    YYYY/
+      MM/
+        post-id-1.json
+	    post-id-n.json
 
 scripts/
   site-script-1.js
 
 styles/
   style1.css
+
+#### theweans sub-site
+
+/theweans
+  index.html
+  /images
+    YYYY/
+    ..as main site...
+  /posts
+    vY/
+    ..as main site...
+    
 
 ### Details
 
@@ -45,15 +61,17 @@ Thumbnail versions of images are generated via script (see below) based on disco
 
 ## CDN Details
 
-Lightbox (including images and stlying) https://cdnjs.com/libraries/lightbox2
+Lightbox (including images and styling) https://cdnjs.com/libraries/lightbox2
 
 ## Admin Scripts
 
 ### General
 
-To run a script:
-* Ensure node_modules dir is in place based on `package.json` (run from `\admin` dir): `npm install` 
+To run the scripts:
+* Ensure node_modules dir is in place based on `package.json` (run from root` dir): `npm install admin` 
 * node my-script.js
+
+The scripts below produce generated static content and can be run collectively via `build.bat` (or individually using `node`).
 
 ### generate-index.js
 
@@ -61,6 +79,10 @@ Variable "_postsDirSubPath_" specifies a relative path (from this script) to the
 * For a post with ID "my-great-post" from Janurary 2010 we'd epxtect "[postsDir]/2010/01/my-great-post.json"
 
 A summary post index and tag summary are produced in the JSON file. Posts are ordered by date. Tags are ordered by occurrence in the posts and assigned a relative weighting bucket based on number of occurrences.
+
+### minimise-assets.js
+
+Makes .min versions of CSS and JS files.
 
 ### generate-thumbnails.js
 
@@ -74,6 +96,6 @@ Depends on Modules:
 
 ### YouTube Thumbnails
 
-For posts with no images the thumbnail is used for the Archive page.
+For posts with no images (i.e. video) the thumbnail property is required for the Archive page image.
 You can download the thumbnail for a YouTube video from: https://img.youtube.com/vi/VIDEO_ID_HERE/hqdefault.jpg
 Save as VIDEO_ID_HERE.jpg and generate the thumbnails based on that.
