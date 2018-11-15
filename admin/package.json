@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "dependencies": {
         "gm": "1.23.x",
+        "minimist":"1.2.0",
         "node-minify": "3.6.x"
     }
 }

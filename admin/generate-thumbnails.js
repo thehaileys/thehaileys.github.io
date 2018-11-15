@@ -1,8 +1,11 @@
+var argv = require('minimist')(process.argv.slice(2));
 var fs = require('fs');
 var gm = require('gm');
 
-var forceOverwrite = false;  // If changing logic and want to regenerate all then set to true
-var imagesDirSubPath = "..\\images\\posts";
+var imagesDirSubPath = argv.path
+var forceOverwrite = argv.overwrite
+var verbose = argv.v
+
 var sourceBasePath = __dirname + "\\" + imagesDirSubPath;
 var newSizes = [
   {name: "thumb", size: 150},
@@ -56,7 +59,9 @@ var resizeIfNotAlreadyExists = function(source, dest, newWidth) {
 		if(!exists || forceOverwrite) {
 			checkOrientationAndResizeImage(source, dest, newWidth);
 		} else {
-      console.log("Skipping (thumbnail already exists): " + source);      
+      if(verbose) {
+        console.log("Skipping (thumbnail already exists): " + source);      
+      }
     }
 	});
 }
@@ -83,6 +88,7 @@ var resizeImage = function(source, dest, newWidth, size) {
       .resize(newWidth, newHeight, "!")
       .write(dest, function (err) { if (err) { console.log(err); } });
   }
+  console.log("Generated " + dest);      
 }
 
 findImageFiles(sourceBasePath, function(err, imagesPaths) {

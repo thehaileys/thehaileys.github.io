@@ -1,6 +1,5 @@
 Blog = {};
 Blog.Settings = {};
-Blog.Settings.ImageSrcPrefix = "images/posts/";
 Blog.Settings.MaxPostsPerPage = 5;
 Blog.Navigation = {};
 Blog.Navigation.PostsSection = "Posts";
@@ -119,9 +118,8 @@ Blog.Navigation.naviagteToPage = function() {
 	}
 };
 Blog.Data = {};
-Blog.Data.DataRoot = "posts/v1/";
 Blog.Data.getIndexDataUrl = function() {
-	return Blog.Data.DataRoot + "index.json";
+	return Blog.Settings.DataRoot + "index.json";
 };
 Blog.Data.getPostDataUrl = function(id) {
 	var postIndex = Blog.Navigation.getPostIndex(id);
@@ -129,7 +127,7 @@ Blog.Data.getPostDataUrl = function(id) {
 	var monthNumber = postDate.getMonth() + 1;
 	var postYear = postDate.getFullYear();
 	var postMonth = monthNumber < 10 ? "0" + monthNumber : monthNumber;
-	return Blog.Data.DataRoot + postYear + "/" + postMonth + "/" + id + ".json";
+	return Blog.Settings.DataRoot + postYear + "/" + postMonth + "/" + id + ".json";
 };
 Blog.Data.load = function(postIndexData) {
 	Blog.PostData.Index = postIndexData.posts;
@@ -510,7 +508,3 @@ Blog.Content.renderRandom = function() {
 	location.hash = url;
 };
 Blog.PostData = {};
-$(function() {
-	Blog.Navigation.wireUpHashChangeListener();
-	Blog.Navigation.onHashChange();
-});

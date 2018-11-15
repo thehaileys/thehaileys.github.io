@@ -1,7 +1,10 @@
+var argv = require('minimist')(process.argv.slice(2));
 var fs = require('fs');
 
+var postsDirSubPath = argv.path
+
+
 var createBackup = false;
-var postsDirSubPath = "..\\posts\\v1";
 var postsFullDir =  __dirname + "\\" + postsDirSubPath + "\\"; 
 var indexFileName = "index.json"
 var prettyPrint = true;
