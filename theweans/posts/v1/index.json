@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "id": "hollys-first-swimming-lesson",
+      "date": "2018-11-02T01:00:00.000Z",
+      "coverImage": "IMG_20181102_120344.jpg",
+      "tags": [
+        "East Kilbride",
+        "Scotland"
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "East Kilbride",
+      "bucket": 5
+    },
+    {
+      "name": "Scotland",
+      "bucket": 10
+    }
+  ]
+}
